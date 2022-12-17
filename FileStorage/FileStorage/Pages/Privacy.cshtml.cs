@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Globalization;
 
 namespace FileStorage.Pages
 {
@@ -13,6 +14,8 @@ namespace FileStorage.Pages
 
         public void OnGet()
         {
+            string dateTime = DateTime.Now.ToString("d", new CultureInfo("en-US"));
+            ViewData["TimeStamp"] = dateTime;
         }
     }
 }
