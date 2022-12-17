@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="MyStaticFiles\" />
-    <Folder Include="Pages\Users\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

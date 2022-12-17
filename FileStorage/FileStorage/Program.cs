@@ -1,5 +1,8 @@
 // A request can access .jpg file by configuring the Static File Middleware as follows:
 using Microsoft.Extensions.FileProviders;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using FileStorage.Data;
 
 // The CreateBuilder method sets the content root to the current directory.
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Create a WebApplicationBuilder with preconfigured defaults, add Razor Pages support to the Dependency Injection (DI) container, and builds the app:
 builder.Services.AddRazorPages();
+// A request can access .jpg file by configuring the Static File Middleware as follows:
+builder.Services.AddDbContext<UserContext>(options =>
+// A request can access .jpg file by configuring the Static File Middleware as follows:
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UserContext") ?? throw new InvalidOperationException("Connection string 'UserContext' not found.")));
 
 var app = builder.Build();
 
