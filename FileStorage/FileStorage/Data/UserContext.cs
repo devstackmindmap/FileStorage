@@ -7,6 +7,11 @@ using FileStorage.Models;
 
 namespace FileStorage.Data
 {
+
+    // Derives from Microsoft.EntityFrameworkCore.DbContext.
+    // Specifies which entities are included in the data model.
+    // Coordinates EF Core functionality, such as Create, Read, Update and Delete, for the Movie model.
+
     public class UserContext : DbContext
     {
         public UserContext (DbContextOptions<UserContext> options)

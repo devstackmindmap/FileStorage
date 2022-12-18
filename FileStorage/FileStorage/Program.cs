@@ -1,7 +1,6 @@
 // A request can access .jpg file by configuring the Static File Middleware as follows:
 using Microsoft.Extensions.FileProviders;
 
-
 // code generated
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // code generated
+// ASP.NET Core is built with dependency injection. Services, such as the EF Core database context, are registered with dependency injection during application startup.
+// Components that require these services (such as Razor Pages) are provided via constructor parameters.
+// The constructor code that gets a database context instance is shown later in the tutorial.
+// The scaffolding tool automatically created a database context and registered it with the dependency injection container.
+// The following highlighted code is added to the Program.cs file by the scaffolder:
 builder.Services.AddDbContext<UserContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("UserContext") ?? throw new InvalidOperationException("Connection string 'UserContext' not found.")));
 
