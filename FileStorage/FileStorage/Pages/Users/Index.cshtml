@@ -1,7 +1,14 @@
 ﻿@page
+<!-- The page Razor directive makes the file an MVC action, which means that it can handle requests. 
+page must be the first Razor directive on a page. 
+page and model are examples of transitioning into Razor-specific markup. 
+See Razor syntax for more information. -->
+
+<!-- The model directive specifies the type of the model passed to the Razor Page. -->
 @model FileStorage.Pages.Users.IndexModel
 
 @{
+    // an example of Razor transitioning into C#. The { and } characters enclose a block of C# code.
     ViewData["Title"] = "Index";
 }
 

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<!-- Select the menu links RazorPagesMovie, Home, and Privacy. 
+Each page shows the same menu layout. 
+The menu layout is implemented in the Pages/Shared/_Layout.cshtml file. -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -32,6 +36,8 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <!-- RenderBody is a placeholder where all the page-specific views show up, wrapped in the layout page. 
+            For example, select the Privacy link and the Pages/Privacy.cshtml view is rendered inside the RenderBody method. -->
             @RenderBody()
         </main>
     </div>
